@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_library_lend_search" model="ir.ui.view">
+        <field name="name">library.lend.search</field>
+        <field name="model">library.lend</field>
+        <field name="arch" type="xml">
+            <search string="lend">
+                <field name="user"/>
+                <field name="start"/>
+                <field name="end"/>
+                <field name="books"/>     
+                <field name="status"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_library_lend_form" model="ir.ui.view">
+        <field name="name">library.lend.form</field>
+        <field name="model">library.lend</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="user"/>
+                        <field name="start"/>
+                        <field name="end"/>
+                        <field name="books"/>     
+                        <field name="status"/>
+                    </group>
+                </sheet>                
+            </form>
+        </field>
+    </record>
+
+    <record id="view_library_lend_tree" model="ir.ui.view">
+        <field name="name">library.lend.tree</field>
+        <field name="model">library.lend</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="user"/>
+                <field name="start"/>
+                <field name="end"/>
+                <field name="books"/>     
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_library_lend" model="ir.actions.act_window">
+        <field name="name">Lends</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">library.lend</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_library_lends" 
+        name="Lends" 
+        parent="menu_library_root" 
+        action="action_library_lend" 
+        sequence="10"/>
+
+</odoo>
